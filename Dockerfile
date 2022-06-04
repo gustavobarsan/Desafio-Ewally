@@ -1,17 +1,7 @@
-FROM node:alpine
-
-RUN apk add --update python3 make g++ && rm -rf /var/cache/apk*
-
-RUN apk add --no-cache tini
-
+FROM node:14
 EXPOSE 8080
-
 WORKDIR /src
-
 COPY package*.json ./
-
-RUN npm install
-
+RUN npm install --only=prod
 COPY . ./
-
 CMD NODE_URLS=http://*:PORT npm start
