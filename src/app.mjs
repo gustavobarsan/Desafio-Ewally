@@ -6,6 +6,6 @@ const app = express()
 app.get('/', (req, res) => res.send({message: "Desafio Ewally"}))
 // app.get('/boleto/:code')
 
-app.listen(PORT, () => console.log(`App is running`))
+app.listen(PORT, () => console.log(`App is running on ${PORT}`))
 
 export default app
