@@ -10,6 +10,6 @@ app.disable("x-powered-by")
 app.get('/', (req, res) => res.send({message: "Desafio Ewally"}))
 // app.get('/boleto/:code')
 
-app.listen(PORT, () => console.log(`<http://localhost:${PORT}>`))
+app.listen(PORT, () => console.log(`App is running`))
 
 export default app
