@@ -14,4 +14,4 @@ RUN npm install
 
 COPY . ./
 
-CMD ["npm", "start"]
+CMD NODE_URLS=http://*:PORT npm start
