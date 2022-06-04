@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha src/test",
+    "test": "mocha src/test --exit",
     "dev": "nodemon src/app.mjs",
     "start": "node src/app.mjs",
     "build": "node src/app.mjs"
