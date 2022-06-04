@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended: true}))
 app.disable("x-powered-by")
 
 app.get('/', (req, res) => res.send({message: "Desafio Ewally"}))
-app.get('/boleto/:code')
+// app.get('/boleto/:code')
 
 app.listen(PORT, () => console.log(`Running on <http://localhost:${PORT}>`))
 
