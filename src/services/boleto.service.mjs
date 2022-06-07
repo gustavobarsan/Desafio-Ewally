@@ -29,5 +29,12 @@ export const boletoService = async (code) => {
         }
     }
 
-    // if(code.length === 48) {}
+    if(code.length === 48) {
+        const date = code.slice(19,23)+'-'+code.slice(23, 25)+'-'+code.slice(25,27)
+        return {
+            barCode: code.slice(0,44),
+            amount: Number(Number(code.slice(4,15))/100).toFixed(2),
+            expirateDate: date
+        }
+    }
 }
