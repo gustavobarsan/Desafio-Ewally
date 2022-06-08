@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Ewally challenge /boleto",
+    "description": "Documentation from boleto's api",
+    "version": "1.0.0"
+  },
+  "basePath": "/",
+  "paths": {
+    "/boleto/{code}": {
+      "get": {
+        "tags": ["Boleto"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "code",
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Código inválido",
+            "content": {
+              "application/json": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "type": "object",
+                "properties": {
+                  "barCode": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number"
+                  },
+                  "expirateDate": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
