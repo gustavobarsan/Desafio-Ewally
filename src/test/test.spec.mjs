@@ -25,10 +25,10 @@ describe("Rota Boleto", () => {
 describe("Rota Boleto", () => {
   it("Convênio", () => {
     request.get(
-      "/boleto/212900011921100012120220607740597587000000200012",
+      "/boleto/812900011921100012120220607740597587000000200012",
       (err, res) => {
         expect(res.body).to.equals({
-          barCode: "21290001192110001212022060774059758700000020",
+          barCode: "81290001192110001212022060774059758700000020",
           amount: "119211.00",
           expirateDate: "2022-06-07",
         });
@@ -60,9 +60,20 @@ describe("Rota Boleto", () => {
 });
 
 describe("Rota Boleto", () => {
-  it("Código inválido caracter diferente de número", () => {
+  it("Código inválido caractér diferente de número", () => {
     request.get(
       "/boleto/2129000119211000121202206077405975870000002000A",
+      (err, res) => {
+        expect(res.body).to.equals({ message: "Código inválido" });
+      }
+    );
+  });
+});
+
+describe("Rota Boleto", () => {
+  it("Código inválido, primeiro caractér de boleto convênio diferente de 8", () => {
+    request.get(
+      "/boleto/212900011921100012120220607740597587000000200000",
       (err, res) => {
         expect(res.body).to.equals({ message: "Código inválido" });
       }

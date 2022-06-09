@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha src/test --exit",
+    "coverage": "istanbul cover --no-default-excludes --report=text _mocha -- src/test/* --recursive --exit",
+    "test": "mocha src/test --reporter spec --exit",
     "dev": "nodemon src/app.test.mjs",
     "debbug": "nodemon --inspect src/app.test.mjs",
     "start": "node --experimental-json-modules src/app.mjs",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
+    "istanbul": "^0.4.5",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.16"
   }
