@@ -9,6 +9,7 @@
   "paths": {
     "/boleto/{code}": {
       "get": {
+        "description": "O parâmetro <b>code</b> recebe a linha digitável do boleto",
         "tags": ["Boleto"],
         "parameters": [
           {
