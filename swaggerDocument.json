@@ -9,14 +9,15 @@
   "paths": {
     "/boleto/{code}": {
       "get": {
-        "description": "O parâmetro <b>code</b> recebe a linha digitável do boleto",
+        "description": "O parâmetro <b>code</b> recebe a linha digitável do boleto e retorna o barCode, o valor e a data e expiração do boleto.",
         "tags": ["Boleto"],
         "parameters": [
           {
             "in": "path",
             "required": true,
             "name": "code",
-            "type": "number"
+            "type": "number",
+            "description": "Recebe a linha digitável do boleto."
           }
         ],
         "responses": {
